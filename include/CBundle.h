@@ -4,3 +4,4 @@
 #include "CConduit.h"
 #include "CPort.h"
 #include "CPack.h"
+#include "Cir8.h"

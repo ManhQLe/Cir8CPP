@@ -1,8 +1,5 @@
-#pragma once
-#include "CBundle.h"
-#include <cstdarg>
+#include "Cir8.h"
 namespace Cir8 {
-
 	static CConduit* Link(IComp* A, string ContactA, string ContactB, IComp* B) {
 		auto Con = new CConduit();
 		Con->Connect(A, ContactA);
@@ -10,8 +7,8 @@ namespace Cir8 {
 		return Con;
 	}
 
-	static CConduit* MultiLink(int Count,...) {
-		va_list args;		
+	static CConduit* MultiLink(int Count, ...) {
+		va_list args;
 		va_start(args, Count);
 		CConduit *Con = new CConduit();
 		for (auto i = 0; i < Count; i += 2) {
@@ -34,4 +31,5 @@ namespace Cir8 {
 	static CConduit* Wire(string N) {
 		return new CConduit(N);
 	}
+
 }

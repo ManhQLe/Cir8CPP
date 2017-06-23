@@ -5,12 +5,7 @@ namespace Cir8 {
 	private:
 		static int Count;
 	public:
-		CComp() :CComp("Name" + (++Count)) {
-		}
-		CComp(string name) {
-			Name = name;
-		}
+		CComp();
+		CComp(string name);
 	};
-
-	int CComp::Count = -1;
 }

@@ -7,6 +7,6 @@ namespace Cir8 {
 		string Name;
 		virtual void Connect(IComp *Comp, string Contact) = 0;
 		virtual void DisconnectWith(IComp *Comp, string Contact) = 0;
-		virtual void OnVibrate(IComp *Comp, string Contact, void *Val) = 0;
+		virtual void OnVibrate(IComp *Comp, string Contact, void* Val) = 0;
 	};
 }

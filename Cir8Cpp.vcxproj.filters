@@ -18,39 +18,57 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
+    <ClInclude Include="include\C1Way.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
+    <ClInclude Include="include\CBundle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CPort.h">
+    <ClInclude Include="include\CComp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IComp.h">
+    <ClInclude Include="include\CConduit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CComp.h">
+    <ClInclude Include="include\Cir8.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CConduit.h">
+    <ClInclude Include="include\CPack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CPack.h">
+    <ClInclude Include="include\CPort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C1Way.h">
+    <ClInclude Include="include\IComp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Cir8.h">
+    <ClInclude Include="include\stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CBundle.h">
+    <ClInclude Include="include\targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="source\C1Way.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CComp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CConduit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Cir8.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CPack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CPort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
