@@ -12,8 +12,7 @@ namespace Cir8 {
 	public:
 		
 		CPort();
-		template <typename T>
-		T Get(const string Contact);
+		void* Get(const string Contact);
 
 		void Set(const string Contact, void *Val);
 

@@ -4,9 +4,8 @@ Cir8::CPort::CPort()
 {
 }
 
-template <typename T>
-T Cir8::CPort::Get(const string Contact) {
-	return *(T*)Values[Contact];
+void* Cir8::CPort::Get(const string Contact) {
+	return Values[Contact];
 }
 
 void Cir8::CPort::Set(const string Contact, void * Val) {

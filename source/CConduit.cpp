@@ -39,7 +39,7 @@ void Cir8::CConduit::OnVibrate(IComp * Comp, string Contact, void* Val) {
 	for (; S != E; S++) {
 		if (S->first != Contact && S->second != Comp) {
 			if (ParallelTrx) {
-				thread t(Vibrate, this, Contact, Comp, Val);
+				thread t(Vibrate, this, S->first, S->second, Val);
 				t.detach();
 			}
 			else
@@ -53,5 +53,8 @@ void Cir8::CConduit::Signal(void* Val) {
 }
 
 void Cir8::CConduit::Vibrate(IComp * From, string Contact, IComp * Comp, void* Val) {
+	cout <<hex << "Conduit vibrate to comp: [" << Comp
+		<< "] at port: [" << Contact << "] - Val Address: [" << Val << "]" << endl;
+
 	Comp->OnVibrate(From, Contact, Val);
 }

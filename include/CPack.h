@@ -11,7 +11,7 @@ namespace Cir8 {
 		typedef void(*CPackFx)(CPack *);
 		unsigned int ICount = 0;
 		bool Stage = false;
-		list<string> Ins;
+		vector<string> Ins;
 		void *Props;
 		CPort Ports;
 		//void (*FX)(CPack *);

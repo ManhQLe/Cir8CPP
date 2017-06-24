@@ -42,6 +42,7 @@ void Cir8::CPack::OnVibrate(IComp * Comp, string Contact, void*Val) {
 		FX(this);
 		return;
 	}
+		
 	if (c != Ins.end()) {//Found
 		if (Stage) {
 			locker.lock();
@@ -57,10 +58,10 @@ void Cir8::CPack::OnVibrate(IComp * Comp, string Contact, void*Val) {
 		else
 		{
 			auto Data = Ports.Values[Contact];
+			Ports.Values[Contact] = Val;
 			if (!Data && ICount++ >= Ins.size() || ICount >= Ins.size()) {
 				if (FX)FX(this);
 			}
 		}
 	}
-
 }

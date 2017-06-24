@@ -1,13 +1,13 @@
 #include "Cir8.h"
 namespace Cir8 {
-	static CConduit* Link(IComp* A, string ContactA, string ContactB, IComp* B) {
+	CConduit* Link(IComp* A, string ContactA, string ContactB, IComp* B) {
 		auto Con = new CConduit();
 		Con->Connect(A, ContactA);
 		Con->Connect(B, ContactB);
 		return Con;
 	}
 
-	static CConduit* MultiLink(int Count, ...) {
+	CConduit* MultiLink(int Count, ...) {
 		va_list args;
 		va_start(args, Count);
 		CConduit *Con = new CConduit();
@@ -17,7 +17,7 @@ namespace Cir8 {
 		return Con;
 	}
 
-	static CConduit* MultiLink(void *A) {
+	CConduit* MultiLink(void *A) {
 		unsigned int *X = (unsigned int *)A;
 		CConduit *Con = new CConduit();
 		do
@@ -28,7 +28,7 @@ namespace Cir8 {
 
 	}
 
-	static CConduit* Wire(string N) {
+	CConduit* Wire(string N) {
 		return new CConduit(N);
 	}
 
