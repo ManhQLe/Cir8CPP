@@ -7,36 +7,34 @@ Cir8::CConduit::CConduit() : CComp() {}
 void Cir8::CConduit::Connect(IComp * Comp, string Contact) {
 	auto S = Contacts.begin();
 	auto E = Contacts.end();
-	bool NotFound = true;
-	for (; S != E; S++) {
-		if (S->first == Contact && S->second == Comp) {
-			NotFound = false;
-			break;
-		}
+	
+	auto X = find_if(S, E, [&](pair<string,IComp*> pair) {
+		return pair.first == Contact && pair.second == Comp;
+	});
+			
+	if (X == E) //NOT FOUND
+	{		
+		Contacts.push_back(make_pair(Contact, Comp));
+		if (Comp)Comp->Connect(this, Contact);
 	}
-	if (NotFound)
-		Contacts[Contact] = Comp;
 
 }
 
 void Cir8::CConduit::DisconnectWith(IComp * Comp, string Contact) {
 	auto S = Contacts.begin();
 	auto E = Contacts.end();
-	bool Found = false;
-	for (; S != E; S++) {
-		if (S->first == Contact && S->second == Comp) {
-			Found = true;
-			break;
-		}
-	}
-	if (Found)
-		Contacts.erase(Contact);
+	auto X = find_if(S, E, [&](pair<string, IComp*> pair) {
+		return pair.first == Contact && pair.second == Comp;
+	});
+	
+	if (X != E)
+		Contacts.remove(*X);
 }
 
 void Cir8::CConduit::OnVibrate(IComp * Comp, string Contact, void* Val) {
 	auto S = Contacts.begin();
 	auto E = Contacts.end();
-	for (; S != E; S++) {
+	while (S != E) {
 		if (S->first != Contact && S->second != Comp) {
 			if (ParallelTrx) {
 				thread t(Vibrate, this, S->first, S->second, Val);
@@ -45,6 +43,7 @@ void Cir8::CConduit::OnVibrate(IComp * Comp, string Contact, void* Val) {
 			else
 				Vibrate(this, S->first, S->second, Val);
 		}
+		S++;
 	}
 }
 
@@ -53,8 +52,8 @@ void Cir8::CConduit::Signal(void* Val) {
 }
 
 void Cir8::CConduit::Vibrate(IComp * From, string Contact, IComp * Comp, void* Val) {
-	cout <<hex << "Conduit vibrate to comp: [" << Comp
-		<< "] at port: [" << Contact << "] - Val Address: [" << Val << "]" << endl;
+	//cout <<hex << "Conduit vibrate to comp: [" << Comp
+	//	<< "] at port: [" << Contact << "] - Val Address: [" << Val << "]" << endl;
 
 	Comp->OnVibrate(From, Contact, Val);
 }

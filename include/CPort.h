@@ -5,12 +5,10 @@
 namespace Cir8 {
 	class CPort :public CComp {	
 		friend class CPack;
-	private:
-		map<string, IComp*> Contacts;
-
+	private:		
 		map<string, void *> Values;
-	public:
-		
+		map<string, IComp*> Contacts;
+	public:		
 		CPort();
 		void* Get(const string Contact);
 

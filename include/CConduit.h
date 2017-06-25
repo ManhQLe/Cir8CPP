@@ -3,7 +3,7 @@
 namespace Cir8 {	
 	class CConduit :public CComp {
 	private:		
-		map<string, IComp*> Contacts;
+		list <pair<string, IComp*>> Contacts;
 	public:
 		CConduit(string name);
 

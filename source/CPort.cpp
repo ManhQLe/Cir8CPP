@@ -10,7 +10,9 @@ void* Cir8::CPort::Get(const string Contact) {
 
 void Cir8::CPort::Set(const string Contact, void * Val) {
 	auto C = Contacts[Contact];
-	if (C) C->OnVibrate(this, Contact, Val);
+	if (C) { 		
+		C->OnVibrate(this, Contact, Val);
+	}	
 }
 
 void Cir8::CPort::Connect(IComp * Comp, string Contact) {
@@ -19,7 +21,7 @@ void Cir8::CPort::Connect(IComp * Comp, string Contact) {
 void Cir8::CPort::DisconnectWith(IComp * Comp, string Contact) {
 }
 
-void Cir8::CPort::OnVibrate(IComp * Comp, string Contact, void*  Val) {
+void Cir8::CPort::OnVibrate(IComp * Comp, string Contact, void* Val) {
 	if (Contacts[Contact] == Comp) {
 		Values[Contact] = Val;
 	}

@@ -1,5 +1,6 @@
 #include "Cir8.h"
 namespace Cir8 {
+
 	CConduit* Link(IComp* A, string ContactA, string ContactB, IComp* B) {
 		auto Con = new CConduit();
 		Con->Connect(A, ContactA);

@@ -11,22 +11,22 @@ void Cir8::CPack::SetStage(bool s) {
 }
 
 void Cir8::CPack::Connect(IComp * Comp, string Contact) {
-	auto Contacts = Ports.Contacts;
-	if (Contacts.find(Contact) != Contacts.end()) { //Found
-		auto A = Contacts[Contact];
-		if (A != Comp) {
-			A->Connect(Comp, Contact);
+	auto &Contacts = Ports.Contacts;
+	auto X = Contacts[Contact];
+	if (X) { //FoundE		
+		if (X != Comp) {
+			X->Connect(Comp, Contact);
 		}
 	}
 	else //Not found
-	{
+	{		
 		Contacts[Contact] = Comp;
-		Comp->Connect(this, Contact);
+		Comp->Connect(this, Contact);		
 	}
 }
 
 void Cir8::CPack::DisconnectWith(IComp * Comp, string Contact) {
-	auto Contacts = Ports.Contacts;
+	auto &Contacts = Ports.Contacts;
 	if (Contacts.find(Contact) != Contacts.end()) { //Found
 		auto A = Contacts[Contact];
 		Contacts.erase(Contact);
@@ -35,7 +35,7 @@ void Cir8::CPack::DisconnectWith(IComp * Comp, string Contact) {
 }
 
 void Cir8::CPack::OnVibrate(IComp * Comp, string Contact, void*Val) {
-	auto Contacts = Ports.Contacts;
+	auto &Contacts = Ports.Contacts;
 	auto End = Contacts.end();
 	auto c = find(Ins.begin(), Ins.end(), Contact);
 	if (Ins.size() == 0) {
