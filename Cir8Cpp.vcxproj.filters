@@ -18,9 +18,6 @@
     <ClInclude Include="include\C1Way.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\CBundle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\CComp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
