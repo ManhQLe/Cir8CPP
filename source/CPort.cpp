@@ -26,3 +26,19 @@ void Cir8::CPort::OnVibrate(IComp * Comp, string Contact, void* Val) {
 		Values[Contact] = Val;
 	}
 }
+
+Cir8::CPort::~CPort()
+{
+	auto S = Values.begin();
+	auto E = Values.end();
+	while (S != E) {
+		delete S->second;
+		S++;
+	}
+	auto S1 = Contacts.begin();
+	auto E1 = Contacts.end();
+	while (S1 != E1) {
+		delete S1->second;
+		S1++;
+	}
+}

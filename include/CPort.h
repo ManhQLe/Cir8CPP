@@ -19,5 +19,6 @@ namespace Cir8 {
 
 		void OnVibrate(IComp *Comp, string Contact, void *Val);
 
+		~CPort();
 	};
 }

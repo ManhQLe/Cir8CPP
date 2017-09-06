@@ -1,10 +1,5 @@
 # Cir8 for C++
-## Experimental Version - Do not use
-## ROADMAP
-[ ]. Passage of dynamic information
-[ ]. Dynamic casting  and information copy construction
-[ ]. Memory management
-
+## MAR programming model in C++
 
 ## Author
 Manh Le

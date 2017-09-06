@@ -27,5 +27,7 @@ namespace Cir8 {
 		void DisconnectWith(IComp * Comp, string Contact);
 
 		void OnVibrate(IComp * Comp, string Contact, void* Val); 
+
+		~CPack();
 	};		
 }

@@ -35,7 +35,10 @@ void Cir8::CConduit::OnVibrate(IComp * Comp, string Contact, void* Val) {
 	auto S = Contacts.begin();
 	auto E = Contacts.end();
 	while (S != E) {
-		if (S->first != Contact && S->second != Comp) {
+		if (S->first == Contact && S->second == Comp) {
+			//Do nothing to prevent bouncing;
+		}
+		else {
 			if (ParallelTrx) {
 				thread t(Vibrate, this, S->first, S->second, Val);
 				t.detach();

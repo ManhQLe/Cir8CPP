@@ -4,7 +4,6 @@
 #include "CConduit.h"
 #include "CPort.h"
 #include "CPack.h"
-#include "Cir8.h"
 #include <cstdarg>
 #define CGET_PORT_VAL(CPack_ptr,Name,Type) *(Type *)CPack_ptr->Ports.Get(Name)
 #define CSEND_TO_PORT(CPack_ptr,Name,Type,Val) CPack_ptr->Ports.Set(Name,Val)
