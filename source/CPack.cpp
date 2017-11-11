@@ -1,8 +1,12 @@
 #include "CPack.h"
 
-Cir8::CPack::CPack(string name) :CComp(name) {}
+Cir8::CPack::CPack(string name) :CComp(name) {
+	Ports.Host = this;
+}
 
-Cir8::CPack::CPack() : CComp() {}
+Cir8::CPack::CPack() : CComp() {
+	Ports.Host = this;
+}
 
 void Cir8::CPack::SetStage(bool s) {
 	Stage = s;
@@ -62,7 +66,6 @@ void Cir8::CPack::OnVibrate(IComp * Comp, string Contact, void*Val) {
 			if (!Data && ICount++ >= Ins.size() || ICount >= Ins.size()) {
 				if (FX)FX(this);
 			}
-			delete Data;
 		}
 	}
 }

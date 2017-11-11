@@ -6,6 +6,7 @@ namespace Cir8 {
 	class CPort :public CComp {	
 		friend class CPack;
 	private:		
+		CComp *Host;
 		map<string, void *> Values;
 		map<string, IComp*> Contacts;
 	public:		

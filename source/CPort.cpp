@@ -11,7 +11,7 @@ void* Cir8::CPort::Get(const string Contact) {
 void Cir8::CPort::Set(const string Contact, void * Val) {
 	auto C = Contacts[Contact];
 	if (C) { 		
-		C->OnVibrate(this, Contact, Val);
+		C->OnVibrate(Host, Contact, Val);
 	}	
 }
 
